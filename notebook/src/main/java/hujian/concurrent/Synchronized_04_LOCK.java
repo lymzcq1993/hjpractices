@@ -1,5 +1,9 @@
 package hujian.concurrent;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.openjdk.jol.info.ClassLayout;
 
 public class Synchronized_04_LOCK {
@@ -12,6 +16,7 @@ public class Synchronized_04_LOCK {
 				System.out.println(ClassLayout.parseInstance(o).toPrintable());
 			}
 		}).start();;
-				
+		List<String> list  = Collections.synchronizedList(new ArrayList<String>());		
+		list.add("sdsdsd");
 	}
 }
