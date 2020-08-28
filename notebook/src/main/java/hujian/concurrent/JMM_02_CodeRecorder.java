@@ -1,6 +1,7 @@
 package hujian.concurrent;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JMM_02_CodeRecorder {
 	//如果线程A中while循环，可能会导致initFlag的修改后的值一直无法从主内存读取更新到工作内存中，造成结果错乱.
@@ -8,7 +9,7 @@ public class JMM_02_CodeRecorder {
 	//private static boolean initFlag = false;   
 	private volatile static boolean initFlag = false;
 	private static int counter = 0;
-	private static Logger log = Logger.getLogger(JMM_02_CodeRecorder.class); 
+	static final Logger log = LoggerFactory.getLogger(JMM_02_CodeRecorder.class);
 	static void refesh() {
 		log.debug("refresh initFlag true");
 		initFlag = true;

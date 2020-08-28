@@ -3,8 +3,8 @@ package hujian.concurrent;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-//volatile可以保证可见性，有序性。但不能保证原子性，需要在代码块加synchronized关键字
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * 缓存一致性协议MESI
  * 当数据执行自加的时候，因为操作并不是原子性所以当临界资源(count)被不断抢夺后会造成数据的覆盖
@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class MESI_03 {
-	private static Logger log = Logger.getLogger(MESI_03.class);
+	static final Logger log = LoggerFactory.getLogger(MESI_03.class);
 	public  volatile static int count = 0; 
 	private static Object o = new Object();
 	public static void main(String[] args) throws InterruptedException {
