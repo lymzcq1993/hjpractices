@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 public class MESI_03 {
 	static final Logger log = LoggerFactory.getLogger(MESI_03.class);
 	public  volatile static int count = 0; 
+	private volatile int mcount = 1;
 	private static Object o = new Object();
 	public static void main(String[] args) throws InterruptedException {
 		CountDownLatch cdl = new CountDownLatch(1);

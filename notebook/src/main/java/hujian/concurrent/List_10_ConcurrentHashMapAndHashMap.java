@@ -1,7 +1,5 @@
 package hujian.concurrent;
 
-import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -9,7 +7,7 @@ public class List_10_ConcurrentHashMapAndHashMap {
     public static void main(String[] args)
     {
         System.out.println("test ConcurrentHashMap fast-fail");
-        Map<Integer, String> testConcurrentHashMap = new ConcurrentHashMap<Integer, String>();
+        ConcurrentHashMap<Integer, String> testConcurrentHashMap = new ConcurrentHashMap<Integer, String>();
         testConcurrentHashMap.put(100, "100");
         testConcurrentHashMap.put(200, "200");
         testConcurrentHashMap.put(300, "300");
