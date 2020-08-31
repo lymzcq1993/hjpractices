@@ -19,8 +19,9 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 输出日志的目录文件名，window中默认分区为当前程序的硬盘分区，%d{yyyy-MM-dd}是当前日期 -->
             <fileNamePattern>${path}/info/info-%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 最大保存2个文件，超出的历史文件会被删除 -->
-            <maxHistory>2</maxHistory>
+            <!-- 最大保存最近30天，超出的历史文件会被删除 -->
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
 
         <!-- 按照日志级别进行过滤 -->
@@ -44,8 +45,9 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 输出日志的目录文件名，window中默认分区为当前程序的硬盘分区，%d{yyyy-MM-dd}是当前日期 -->
             <fileNamePattern>${path}/warn/warn-%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 最大保存2个文件，超出的历史文件会被删除 -->
-            <maxHistory>2</maxHistory>
+            <!-- 最大保存最近30天，超出的历史文件会被删除 -->
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
 
         <!-- 按照日志级别进行过滤 -->
@@ -69,9 +71,9 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 输出日志的目录文件名，window中默认分区为当前程序的硬盘分区，%d{yyyy-MM-dd}是当前日期 -->
             <fileNamePattern>${path}/error/error-%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 最大保存2个文件，超出的历史文件会被删除 -->
+            <!-- 最大保存最近30天，超出的历史文件会被删除 -->
             <cleanHistoryOnStart>true</cleanHistoryOnStart>
-            <maxHistory>2</maxHistory>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
 
         <!-- 按照日志级别进行过滤 -->
