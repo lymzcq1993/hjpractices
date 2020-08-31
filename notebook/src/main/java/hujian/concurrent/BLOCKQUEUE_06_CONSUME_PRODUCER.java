@@ -5,12 +5,12 @@ package hujian.concurrent;
  *
  */
 
-import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 public class BLOCKQUEUE_06_CONSUME_PRODUCER {
