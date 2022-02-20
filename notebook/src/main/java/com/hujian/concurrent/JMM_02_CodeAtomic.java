@@ -1,4 +1,4 @@
-package hujian.concurrent;
+package com.hujian.concurrent;
 /**
  * volatile禁止指令重排
  * @author 35918

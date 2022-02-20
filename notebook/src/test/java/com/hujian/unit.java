@@ -1,4 +1,4 @@
-package hujian;
+package com.hujian;
 
 import junit.framework.TestCase;
 

@@ -1,4 +1,4 @@
-package hujian.jvm.classloaderTest;
+package com.hujian.jvm;
 
 import java.io.FileInputStream;
 
@@ -74,7 +74,7 @@ public class CusClassLoader{
 	public static void main(String[] args) throws ClassNotFoundException {
 		//继承双亲委派
 		ExtParents l = new ExtParents("F:/test");
-		Class cla = l.loadClass("hujian.jvm.classloaderTest.TClassLoader");
+		Class cla = l.loadClass("com.hujian.jvm.TClassLoader");
 		System.out.println(cla.getClassLoader());
 		
 		//打破双亲委派，由自己去加载底层String类

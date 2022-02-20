@@ -1,4 +1,4 @@
-package hujian.concurrent;
+package com.hujian.concurrent;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;

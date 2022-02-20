@@ -1,4 +1,4 @@
-package hujian.log;
+package com.hujian.log;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

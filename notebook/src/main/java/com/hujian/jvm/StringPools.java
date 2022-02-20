@@ -1,4 +1,4 @@
-package hujian.jvm.classloaderTest;
+package com.hujian.jvm;
 
 /**
  * @Classname StringPools

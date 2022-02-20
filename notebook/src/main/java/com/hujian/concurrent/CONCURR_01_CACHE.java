@@ -1,4 +1,4 @@
-package hujian.concurrent;
+package com.hujian.concurrent;
 /**
  * CPU读取内存的连续性..CPU读取内存的时候会默认读取连续内存的变量，提高速度尽量少的直接读取内存
  * @author 35918

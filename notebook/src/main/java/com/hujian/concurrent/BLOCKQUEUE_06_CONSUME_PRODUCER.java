@@ -1,4 +1,4 @@
-package hujian.concurrent;
+package com.hujian.concurrent;
 /**
  * 测试消费者和生产者
  * @author 35918

@@ -1,4 +1,4 @@
-package hujian.concurrent;
+package com.hujian.concurrent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class AQS_05_ReentranLockInterrputed {
 	static boolean flag = false;
 
 	public static void main(String[] args) throws InterruptedException {
-		
+		System.out.println("dd");
 		List<Thread> tList  = new ArrayList<Thread>();
 		for(int i =0;i<10;i++) {
 			Thread t = new Thread(()->{
