@@ -1,8 +1,6 @@
 package com.hujian.algorithm;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -13,7 +11,7 @@ import java.util.Map;
  */
 public class FindStringNoRepeatStr {
     public static void main(String[] args) {
-        System.out.println(biaozhunAnswer("pwwkew"));
+        System.out.println(biaozhunAnswer(" "));
     }
 
     /**
@@ -46,7 +44,8 @@ public class FindStringNoRepeatStr {
     }
 
     /**
-     * 标准答案
+     * 参考使用map存取每个字母出现的最后index的索引
+     * 滑块的概念
      * @param s
      * @return
      */
@@ -59,14 +58,12 @@ public class FindStringNoRepeatStr {
             //获取字符串最后的起始位置
             char c = s.charAt(i);
             Integer integer = map.get(c);
-            start = Math.max(integer == null?0:integer,start );
+            //如果有重复元素，需要更新起始的位置
             if (map.containsKey(c)){
-                maxLength = Math.max(maxLength,i-start);
+                //此处需要将最后一次出现的位置+1，因为是重复元素所以需要干掉该元素
+                start = Math.max(integer == null?0:++integer,start);
             }
-            else{
-                maxLength = Math.max(maxLength,i-start+1);
-            }
-
+            maxLength = Math.max(maxLength,i-start+1);
             map.put(c,i);
 //            maxLength = Math.max(,maxLength-start)
         }
