@@ -8,6 +8,9 @@ import java.util.Map;
     无重复字符的最长子串
 
  给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+ 总结：首先最简单直接的想法是循环套循环，从第0个字符开始找，每遇到重复的字符就停止，递归查询O（n^2）
+    （进阶算法O(n)）:如abcdcm，start指向第0个位置，end指向第0个位置，然后end右移遇到c，这时保存第一个长度4(abcd)，start指向c的下一个d，end继续右移....
+
  */
 public class FindStringNoRepeatStr {
     public static void main(String[] args) {
