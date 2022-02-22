@@ -33,8 +33,7 @@
 	<dependency>
 	    <groupId>org.openjdk.jol</groupId>
 	    <artifactId>jol-core</artifactId>
-	    <version>0.13</version>
-	     <scope>test</scope>
+	    <version>0.16</version>
 	</dependency>
     <!-- logback和slf4j的日志包 -->
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
@@ -76,7 +75,6 @@
           <artifactId>hutool-all</artifactId>
           <version>5.7.21</version>
       </dependency>
-
   </dependencies>
 
   
