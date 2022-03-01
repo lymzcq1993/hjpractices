@@ -49,7 +49,7 @@ public class TwoNumberSum {
      * O(1) 使用Hash表，将两数之和转化为target-x，变成从数组中查数。
      * 思路是每次减得到的值放入到hash表中，如果命中则返回，没有则将该数放入hash
      */
-    public static int[] hash(int[] nums,int target){
+    private static int[] hash(int[] nums,int target){
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if(map.containsKey(target-nums[i])){

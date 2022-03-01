@@ -1,5 +1,7 @@
 package com.hujian.algorithm;
 
+import java.util.Stack;
+
 /**
  *  扩散法
  *  https://leetcode-cn.com/problems/longest-palindromic-substring/
@@ -45,6 +47,7 @@ public class Palindrome {
             while(L >= 0 && R <totalLength && s.charAt(L) == s.charAt(R)){
                 L--;
                 R++;
+                //需要加上此时找到的两边的字符
                 length+=2;
             }
             if (length >maxLength){
