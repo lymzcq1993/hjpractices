@@ -80,18 +80,12 @@ public class MergeTwoOrderedQueues {
                     int a = nextNode1.val;
                     int b = nextNode2.val;
                     if(a <= b){
-                        ListNode tmp = nextNode1;
-                        newNextNode = nextNode1;
-                        nextNode1 = nextNode2.next;
-                        newNextNode = newNextNode.next;
+                        newNextNode.next = nextNode1;
+                        nextNode1 = nextNode1.next;
                     }
                     else{
-                        ListNode tmp = nextNode2;
-                        newNextNode = nextNode2;
+                        newNextNode.next = nextNode2;
                         nextNode2 = nextNode2.next;
-                        newNextNode = newNextNode.next;
-
-
                     }
 
                 }
