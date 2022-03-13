@@ -1,4 +1,5 @@
 package com.hujian.concurrent;
+
 /**
  * volatile禁止指令重排
  * @author 35918
@@ -17,7 +18,7 @@ public class JMM_02_CodeAtomic {
 				x = b;
 				a = 1;
 			});
-			
+
 			Thread tb = new Thread(()->{
 				y = a;
 				b = 1;
