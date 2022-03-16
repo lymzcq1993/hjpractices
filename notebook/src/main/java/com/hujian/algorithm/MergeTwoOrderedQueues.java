@@ -45,53 +45,35 @@ public class MergeTwoOrderedQueues {
         System.out.println(mergeTwoLists(list1,list2));
     }
 
+    /**
+     * 使用的合并链表，而不是用一个新的链表去存储，主要难点是怎么降低空间复杂度。
+     * @param list1
+     * @param list2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-            if(list1 == null && list2 != null)return list2;
-            if(list1 != null && list2 == null)return list1;
-            if(list1 == null & list2 == null)return null;
-            boolean flag = true;
-            ListNode nextNode1 = list1;
-            ListNode nextNode2 = list2;
-            ListNode newNode = null;
-            ListNode newNextNode;
-            if (list1.val <= list2.val){
-                newNode = list1;
-                nextNode1 = list1.next;
-                newNextNode = newNode.next;
+        ListNode myNode =new ListNode();
+        //这里刚开始陷入了一个误区，一直把curNode指向了myNode.next属性
+        //导致返回的一直是空的node
+        ListNode curNode =myNode;
+        while(list1!=null && list2!=null){
+            if(list1.val <= list2.val){
+                curNode.next=list1;
+                list1=list1.next;
             }
             else{
-                newNode = list2;
-                nextNode2 = list2.next;
-                newNextNode = newNode.next;
+                curNode.next =list2;
+                list2=list2.next;
             }
-            while(flag){
-                if(nextNode2 == null && nextNode1 != null){
-                    newNextNode = nextNode1;
-                    newNextNode = newNextNode.next;
-                    nextNode1 = nextNode1.next;
-                }
-                else if(nextNode2 != null && nextNode1 == null){
-                    newNextNode = nextNode2;
-                    newNextNode = newNextNode.next;
-                    nextNode2 = nextNode2.next;
-                }
-                else if (nextNode1 ==null && nextNode2 == null)flag = false;
-                else{
-                    int a = nextNode1.val;
-                    int b = nextNode2.val;
-                    if(a <= b){
-                        newNextNode.next = nextNode1;
-                        nextNode1 = nextNode1.next;
-                    }
-                    else{
-                        newNextNode.next = nextNode2;
-                        nextNode2 = nextNode2.next;
-                    }
-
-                }
-            }
-            return newNode;
-    }
+            curNode=curNode.next;
+        }
+        if(list1 ==null){
+            curNode=list2;
+        }
+        else{
+            curNode =list1;
+        }
+        return myNode.next;    }
 
 
     private static class ListNode {

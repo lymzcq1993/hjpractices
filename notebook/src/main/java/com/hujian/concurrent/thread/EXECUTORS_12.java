@@ -1,14 +1,11 @@
-package com.hujian.concurrent;
-
-import java.util.HashMap;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
+package com.hujian.concurrent.thread;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantLock;
 /**
  * 线程池
  * @author 35918
@@ -22,6 +19,7 @@ public class EXECUTORS_12 {
 	
 	public static void main(String[] args) throws InterruptedException {
 		ss();
+
 	}
 	
 	public static void ss() throws InterruptedException {
@@ -29,7 +27,7 @@ public class EXECUTORS_12 {
 		s.containsKey("ddd");
 		ConcurrentHashMap<String, String> d = new ConcurrentHashMap<String, String>();
 		ScheduledThreadPoolExecutor st = new ScheduledThreadPoolExecutor(2);
-		
+		ExecutorService service = Executors.newCachedThreadPool();
 		Thread.sleep(5000);
 		st.schedule(()->{
 			
