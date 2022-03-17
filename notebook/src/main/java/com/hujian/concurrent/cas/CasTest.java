@@ -1,12 +1,11 @@
 package com.hujian.concurrent.cas;
 
+import com.hujian.concurrent.UnsafeFactory;
 import sun.misc.Unsafe;
-
-import java.lang.reflect.Field;
 
 public class CasTest {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        Unsafe unSafe = getUnSafe();
+        Unsafe unSafe = UnsafeFactory.getUnSafe();
         CasT casT = new CasT();
         casT.setI(5);
         long offSet = getFieldOffSet(casT, "i");
@@ -36,20 +35,10 @@ public class CasTest {
      * 获取字段偏移量
      */
     public static long getFieldOffSet(Object o,String field) throws NoSuchFieldException, IllegalAccessException {
-        long l = getUnSafe().objectFieldOffset(o.getClass().getDeclaredField(field));
+        long l = UnsafeFactory.getUnSafe().objectFieldOffset(o.getClass().getDeclaredField(field));
         System.out.println("偏移量为:"+l);
         return l;
     }
 
-    /**
-     * unsafe方法java不允许直接使用，因此使用反射获取
-     * @return
-     * @throws NoSuchFieldException
-     * @throws IllegalAccessException
-     */
-    public static Unsafe getUnSafe() throws NoSuchFieldException, IllegalAccessException {
-        Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
-        theUnsafe.setAccessible(true);
-        return (Unsafe) theUnsafe.get(null);
-    }
+
 }
