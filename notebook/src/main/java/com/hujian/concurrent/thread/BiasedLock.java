@@ -13,7 +13,7 @@ import org.openjdk.jol.info.ClassLayout;
 @Slf4j
 public class BiasedLock {
     public static void main(String[] args) throws InterruptedException {
-        hashcodeLock();
+        lockUpdate();
     }
 
 
@@ -54,10 +54,15 @@ public class BiasedLock {
                 log.debug(ClassLayout.parseInstance(obj).toPrintable());
             }
             log.debug("释放锁");
+            try {
+                Thread.sleep(100000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }).start();
 
-        log.debug(ClassLayout.parseInstance(obj).toPrintable());
-        Thread.sleep(100);
+//        log.debug(ClassLayout.parseInstance(obj).toPrintable());
+        Thread.sleep(3000);
 
         new Thread(()->{
             synchronized (obj){
