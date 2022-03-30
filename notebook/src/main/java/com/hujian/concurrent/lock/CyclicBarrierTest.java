@@ -12,7 +12,7 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarrierTest {
     static ConcurrentHashMap<String,Integer> map = new ConcurrentHashMap<>(8);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(5,()->{
             Integer score = 0;
             for (String s : map.keySet()) {
@@ -20,6 +20,8 @@ public class CyclicBarrierTest {
             }
             System.out.println("总分"+score);
         });
+        System.out.println("2222");
+        cyclicBarrier.await();
 
         for (int i = 0; i < 5; i++) {
             new Thread(()->{
