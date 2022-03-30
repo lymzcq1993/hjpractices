@@ -11,8 +11,8 @@ import java.util.concurrent.SynchronousQueue;
 @Slf4j
 public class SynchronousQueueDemo {
     public static void main(String[] args) throws InterruptedException {
-        SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>(); //非公平
-//        SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>(true); //公平
+//        SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>(); //非公平
+        SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>(true); //公平
         new Thread(()->{
             try {
                 log.debug(Thread.currentThread().getName()+"准备消费");
@@ -35,9 +35,9 @@ public class SynchronousQueueDemo {
             }
         },"消费者2").start();
 
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
 
-
+        System.out.println("---");
         new Thread(()->{
             try {
                 Integer i = 1;
