@@ -1,17 +1,17 @@
 package com.hujian.algorithm;
 
 /**
- * @author hujian
- * @since 2022-03-31 16:00
+ * 96. 不同的二叉搜索树
+ * https://leetcode-cn.com/problems/unique-binary-search-trees/
  */
 public class NumTrees96 {
     /**
-     * 这里假设有n个结点，则N个节点对应的个数为G(n)
-     * 针对G(n)，i为作为root节点的时候的二叉树的个数，则左边的树为i-1,右边的树为n-i
-     * G(n) = G(i-1)*G(n-i)
-     * G0 = 1
-     * G1 = 1 * 1
-     * G2 = 1 * 1 +  1*1
+     * 动态规划
+     * 根据搜索二叉树的特性，左边的树结点一定比右边小
+     * 因此可以得出当有n个结点的时候，G(n) 为二叉树数量
+     * 对于任意n个结点的任意一点i  都有    f(i) = G(i-1) +G(n-i)
+     * 因为G(0)=1  G(1)=1
+     * 因此n>=1  G(n)  =G(0) +G(1)   +  G(1)+G(0) +  .... +  G(i-1)+G(n-i)
      * @param n
      * @return
      */
@@ -27,4 +27,5 @@ public class NumTrees96 {
         }
         return G[n];
     }
+
 }

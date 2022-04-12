@@ -1,6 +1,7 @@
 package com.hujian.concurrent.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * 测试可中断
@@ -8,6 +9,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockInterupted {
     public static void main(String[] args) throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();
+        ReentrantReadWriteLock lock1 = new ReentrantReadWriteLock();
+        lock1.readLock().lockInterruptibly();
         Thread thread1 = new Thread(() -> {
             try {
                 lock.lockInterruptibly();
