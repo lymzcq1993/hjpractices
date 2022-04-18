@@ -1,6 +1,6 @@
 package com.hujian.algorithm.tree;
 
-import com.hujian.algorithm.tree.treenode.TreeNode;
+import com.hujian.algorithm.dataStruce.TreeNode;
 
 /**
  * 124. 二叉树中的最大路径和

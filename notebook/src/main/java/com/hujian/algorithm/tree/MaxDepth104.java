@@ -1,6 +1,6 @@
 package com.hujian.algorithm.tree;
 
-import com.hujian.algorithm.tree.treenode.TreeNode;
+import com.hujian.algorithm.dataStruce.TreeNode;
 
 /**
  * 同样使用递归来查找最深的树

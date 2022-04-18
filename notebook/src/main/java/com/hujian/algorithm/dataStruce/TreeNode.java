@@ -1,4 +1,4 @@
-package com.hujian.algorithm.tree.treenode;
+package com.hujian.algorithm.dataStruce;
 
 /**
  * @author hujian

@@ -1,6 +1,6 @@
 package com.hujian.algorithm.tree;
 
-import com.hujian.algorithm.tree.treenode.TreeNode;
+import com.hujian.algorithm.dataStruce.TreeNode;
 
 /**
  * 101. 对称二叉树
