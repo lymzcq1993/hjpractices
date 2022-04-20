@@ -45,7 +45,7 @@ public class BiasedLock {
         Thread.sleep(5000);
 
         Object obj = new Object();
-        log.debug(ClassLayout.parseInstance(obj).toPrintable());
+//        log.debug(ClassLayout.parseInstance(obj).toPrintable());
 
 
         new Thread(()->{
@@ -62,7 +62,7 @@ public class BiasedLock {
         }).start();
 
 //        log.debug(ClassLayout.parseInstance(obj).toPrintable());
-        Thread.sleep(3000);
+        Thread.sleep(10000);
 
         new Thread(()->{
             synchronized (obj){

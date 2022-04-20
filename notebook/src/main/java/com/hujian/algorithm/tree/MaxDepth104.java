@@ -2,6 +2,8 @@ package com.hujian.algorithm.tree;
 
 import com.hujian.algorithm.dataStruce.TreeNode;
 
+import java.util.Stack;
+
 /**
  * 同样使用递归来查找最深的树
  * 104. 二叉树的最大深度
@@ -15,6 +17,8 @@ public class MaxDepth104 {
     }
 
     int digui(TreeNode node,int cur){
+        Stack<String> stack = new Stack<>();
+
         TreeNode left = node.left;
         TreeNode right = node.right;
         if(left ==null && right == null){
